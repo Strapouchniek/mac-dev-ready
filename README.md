@@ -34,22 +34,21 @@ zsh setup.sh
 
 ### Option B — Run from GitHub (for sharing with your team)
 
-Once pushed to a **public** GitHub repo, anyone can run this — **no GitHub account needed**:
+**One command, zero prerequisites** — works on a fresh Mac with nothing installed:
 
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/YOUR_REPO/main/mac-dev-ready/setup.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Strapouchniek/mac-dev-ready/main/install.sh)"
 ```
 
-> Replace `YOUR_ORG/YOUR_REPO` with your actual GitHub repository path.
-
-> **Note:** The remote one-liner currently only works for the local execution path since the modules are loaded from disk. A self-contained remote version will be added later.
+> No Git, no Xcode, no account. Uses only `curl` and `zsh` (both built into macOS).
 
 ## Project structure
 
 ```
 mac-dev-ready/
 ├── README.md          ← you are here
-├── setup.sh           ← main entry point
+├── install.sh         ← bootstrap (curl one-liner) — downloads all, then runs setup.sh
+├── setup.sh           ← main entry point (run after clone or via install.sh)
 └── modules/
     ├── utils.sh       ← colors, logging, error handling
     ├── xcode.sh       ← Xcode CLT installer
