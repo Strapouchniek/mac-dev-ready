@@ -98,6 +98,7 @@ install_homebrew() {
     elif [[ -f "/usr/local/bin/brew" ]]; then
         eval "$(/usr/local/bin/brew shellenv)"
     fi
+    hash -r 2>/dev/null || true
 
     # ── Verify installation ───────────────────────────────────────────────
     if command -v brew &>/dev/null; then
