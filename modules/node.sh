@@ -62,6 +62,9 @@ install_node() {
     fi
 
     # ── Verify installation ────────────────────────────────────────────────
+    [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+    hash -r 2>/dev/null || true
+
     if command -v node &>/dev/null && command -v npm &>/dev/null; then
         echo ""
         success "Node.js installed successfully!"

@@ -60,6 +60,9 @@ install_git() {
     fi
 
     # ── Verify installation ────────────────────────────────────────────────
+    [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+    hash -r 2>/dev/null || true
+
     if command -v git &>/dev/null; then
         echo ""
         success "Git installed successfully!"
