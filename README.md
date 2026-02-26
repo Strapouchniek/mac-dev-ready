@@ -1,6 +1,8 @@
 # Mac Dev Ready
 
-One-command setup script that installs everything pre-requirements softwares a non-technical folk needs to use Github and **Cursor**. Join the Merge Party now ✨
+One-command setup script that installs everything pre-requirements softwares a non-technical folk needs to use **Github** and **Cursor**. 
+
+Join the Merge Party now ✨
 
 ## What gets installed
 
