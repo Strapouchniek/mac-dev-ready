@@ -24,7 +24,7 @@ The tools above are installed in a specific sequence because each one depends on
 
 ## Quick start
 
-### Option B — Run from GitHub (for sharing with your team)
+### Option A — Run from GitHub (for sharing with your team)
 
 **One command, zero prerequisites** — works on a fresh Mac with nothing installed:
 
@@ -34,7 +34,7 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Strapouchniek/mac-dev-rea
 
 > No Git, no Xcode, no account. Uses only `curl` and `zsh` (both built into macOS).
 
-### Option A — Run locally (recommended for testing)
+### Option B — Run locally (recommended for testing)
 
 ```bash
 cd mac-dev-ready
