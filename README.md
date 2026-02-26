@@ -1,6 +1,6 @@
 # Mac Dev Ready
 
-One-command setup script that installs everything a non-technical team member needs to use **Cursor** and create **Pull Requests** on GitHub.
+One-command setup script that installs everything pre-requirements softwares a non-technical folk needs to use Github and **Cursor**. Join the Merge Party now ✨
 
 ## What gets installed
 
