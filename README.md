@@ -22,15 +22,7 @@ The tools above are installed in a specific sequence because each one depends on
 4. **Node.js** — installed via Homebrew (or nvm)
 5. **Oh My Zsh** — installed last because it modifies `.zshrc`
 
-
 ## Quick start
-
-### Option A — Run locally (recommended for testing)
-
-```bash
-cd mac-dev-ready
-zsh setup.sh
-```
 
 ### Option B — Run from GitHub (for sharing with your team)
 
@@ -41,6 +33,13 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Strapouchniek/mac-dev-rea
 ```
 
 > No Git, no Xcode, no account. Uses only `curl` and `zsh` (both built into macOS).
+
+### Option A — Run locally (recommended for testing)
+
+```bash
+cd mac-dev-ready
+zsh setup.sh
+```
 
 ## Project structure
 
