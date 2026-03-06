@@ -82,6 +82,9 @@ success "macOS version — good."
 require_internet
 success "Internet connection — good."
 
+source "$MODULES_DIR/admin.sh"
+require_admin_or_migrate
+
 echo ""
 
 wait_for_user "Press Enter to start the setup..."

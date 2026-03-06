@@ -21,7 +21,24 @@ install_node() {
         node_version="$(node --version)"
         npm_version="$(npm --version)"
         success "Node.js is already installed via Homebrew (Node $node_version, npm $npm_version)."
-        NODE_RESULT="already_installed"
+
+        info "Checking for updates..."
+        if brew upgrade node >> "${LOG_FILE:-/tmp/mac-dev-ready.log}" 2>&1; then
+            hash -r 2>/dev/null || true
+            local new_version
+            new_version="$(node --version)"
+            if [[ "$new_version" != "$node_version" ]]; then
+                success "Node.js updated to $new_version (npm $(npm --version))."
+                NODE_RESULT="upgraded"
+            else
+                success "Already on the latest version."
+                NODE_RESULT="already_installed"
+            fi
+        else
+            warn "Could not check for updates — this is non-critical, continuing."
+            NODE_RESULT="already_installed"
+        fi
+
         return 0
     fi
 
