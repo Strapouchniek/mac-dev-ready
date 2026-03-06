@@ -10,7 +10,7 @@ set -e
 
 BASE_URL="https://raw.githubusercontent.com/Strapouchniek/mac-dev-ready/main"
 TMP_DIR="${TMPDIR:-/tmp}/mac-dev-ready-$$"
-MODULES="utils xcode homebrew git node omz"
+MODULES="utils admin xcode homebrew git node omz"
 
 echo "Downloading Mac Dev Ready..."
 mkdir -p "$TMP_DIR/modules"

@@ -19,7 +19,24 @@ install_git() {
         local git_version
         git_version="$(git --version)"
         success "Git is already installed via Homebrew ($git_version)."
-        GIT_RESULT="already_installed"
+
+        info "Checking for updates..."
+        if brew upgrade git >> "${LOG_FILE:-/tmp/mac-dev-ready.log}" 2>&1; then
+            hash -r 2>/dev/null || true
+            local new_version
+            new_version="$(git --version)"
+            if [[ "$new_version" != "$git_version" ]]; then
+                success "Git updated to $new_version."
+                GIT_RESULT="upgraded"
+            else
+                success "Already on the latest version."
+                GIT_RESULT="already_installed"
+            fi
+        else
+            warn "Could not check for updates — this is non-critical, continuing."
+            GIT_RESULT="already_installed"
+        fi
+
         _configure_git
         return 0
     fi
